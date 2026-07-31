@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: searched
+note: >-
+  Probed the standard /.well-known/ discovery surface on the Mobillis website
+  and hosted auth host. No documents returned 200; recorded as honest absence.
+hosts:
+- host: https://mobillis.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://auth.mobillis.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404

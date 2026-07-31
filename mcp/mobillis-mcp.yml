@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: https://mobillis.com/  # derived from documented API endpoints; no official MCP server published
+note: >-
+  No official hosted/remote MCP server is published by Mobillis. This is a
+  candidate tool list derived from the documented Open API operations, provided
+  as a starting point only.
+server:
+  name: mobillis
+  transport: http
+tools:
+- name: create_wallet
+  description: Create a prepaid mobility wallet.
+  source_operation: POST /v1/wallets
+- name: topup_wallet
+  description: Top up a wallet balance (PSP-orchestrated).
+  source_operation: POST /v1/wallets/:id/topup
+- name: get_wallet_ledger
+  description: Read a wallet's ledger / transaction history.
+  source_operation: GET /v1/wallets/:id/ledger
+- name: register_webhook
+  description: Register a webhook subscription for low-balance and billing events.
+  source_operation: POST /v1/webhooks

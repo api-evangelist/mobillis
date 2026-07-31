@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: derived
+source: https://mobillis.com/  # documented API endpoint examples on the marketing site
+note: >-
+  Derived from the public API endpoint examples published on mobillis.com. No
+  OpenAPI, no self-serve developer portal, and no auth reference are published;
+  fields not documented by the provider are recorded as unknown rather than
+  assumed.
+authentication:
+  style: partner-gated
+  hosted_auth: https://auth.mobillis.com/
+  scheme: unknown  # bearer/API-key likely for the Open API tier but not publicly documented
+versioning:
+  style: uri-path
+  current: v1
+  evidence: documented endpoints are prefixed /v1/ (POST /v1/wallets, GET /v1/wallets/:id/ledger)
+resource_style: REST, resource-oriented (wallets, top-ups, ledger, webhooks)
+idempotency:
+  supported: unknown  # no idempotency-key header documented
+pagination:
+  style: unknown  # ledger endpoint likely paginates; not documented
+error_envelope:
+  shape: unknown  # no error reference published
+webhooks:
+  supported: true
+  registration: POST /v1/webhooks
+  events:
+  - low-balance alert
+  - billing trigger
+  catalog: asyncapi/mobillis-webhooks.yml
+distribution_tiers:
+- name: Referral Links
+  pattern: GET /r/{brand}?via=mobillis
+  description: Branded referral URLs with revenue share on top-ups.
+- name: White-Label Platform
+  description: Customizable front end (logo, colors, copy) on partner domains.
+- name: Open APIs
+  description: Programmatic wallet, top-up, ledger, and webhook access.
+documented_operations:
+- POST /v1/wallets
+- POST /v1/wallets/:id/topup
+- GET /v1/wallets/:id/ledger
+- POST /v1/webhooks
+- GET /r/{brand}?via=mobillis

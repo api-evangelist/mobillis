@@ -1,7 +1,33 @@
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v1
 aid: mobillis
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/mobillis.png
 name: Mobillis
-description: Mobillis is a company surfaced as a portfolio company of kindred-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Mobillis, operated by Reflex Mobility, Inc., is a fintech mobility platform
+  that turns vehicle fleet inventory into a prepaid billing and access product.
+  It sits as an overlay on top of legacy rental and fleet systems rather than
+  replacing them, letting fleet operators collect payment upfront and reach new
+  "everyday driver" segments, while non-fleet distribution partners resell
+  vehicle access through referral links, a white-label front end, or the
+  Mobillis Open APIs. The documented API surface covers wallet creation and
+  management, PSP-orchestrated top-ups, ledger and transaction-history access,
+  and webhook events for low-balance alerts and billing triggers. Mobillis
+  operates from Johannesburg and New York.
 url: https://raw.githubusercontent.com/api-evangelist/mobillis/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +37,59 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Fintech
+- Mobility
+- Payments
+- Wallets
+- Fleet Management
+- Prepaid
+- Webhooks
+- Ledger
+apis:
+- name: Mobillis Open API
+  description: >-
+    Partner-facing REST API for distributing prepaid vehicle access. Documented
+    resources include wallet creation and management, PSP-orchestrated top-ups,
+    ledger / transaction history, and webhook registration for low-balance and
+    billing events. Access is partner-gated (contact partners@mobillis.com); no
+    public OpenAPI or self-serve developer portal is published as of this pass.
+  humanURL: https://mobillis.com/#api
+  tags:
+  - Wallets
+  - Payments
+  - Ledger
+  - Webhooks
+  properties:
+  - type: Webhooks
+    url: asyncapi/mobillis-webhooks.yml
+  - type: Conventions
+    url: conventions/mobillis-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/mobillis-domain-security.yml
 - type: Website
   url: https://mobillis.com/
+- type: TermsOfService
+  url: https://auth.mobillis.com/terms
+- type: PrivacyPolicy
+  url: https://auth.mobillis.com/privacy
+- type: SignUp
+  url: https://auth.mobillis.com/
+- type: MCPServer
+  url: mcp/mobillis-mcp.yml
+- type: Webhooks
+  url: asyncapi/mobillis-webhooks.yml
+- type: Conventions
+  url: conventions/mobillis-conventions.yml
+- type: Lifecycle
+  url: lifecycle/mobillis-lifecycle.yml
+- type: LLMsTxt
+  url: llms/mobillis-llms.txt

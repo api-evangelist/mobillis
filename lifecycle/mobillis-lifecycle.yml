@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: derived
+source: https://mobillis.com/  # documented endpoints
+note: >-
+  Derived from the documented API endpoints. Mobillis publishes no versioning
+  policy, deprecation policy, SLA, or status page as of this pass; only the
+  URI-path version marker is observable.
+versioning:
+  scheme: uri-path
+  current: v1
+  evidence: documented endpoints prefixed /v1/
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+sla:
+  url: null
+status_page: null

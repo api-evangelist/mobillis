@@ -1,0 +1,18 @@
+generated: '2026-07-20'
+method: searched
+source: https://mobillis.com/  # webhook surface documented on the marketing site
+spec_type: Webhooks
+note: >-
+  Mobillis documents a webhook surface (registration endpoint plus event types)
+  but publishes no AsyncAPI document. This captures the documented webhook
+  catalog verbatim; event payload schemas are not published.
+registration:
+  operation: POST /v1/webhooks
+  description: Register a webhook subscription endpoint.
+events:
+- name: wallet.low_balance
+  documented_as: low-balance alert
+  description: Emitted when a wallet balance falls below a threshold, so partners can prompt a top-up.
+- name: wallet.billing
+  documented_as: billing trigger
+  description: Emitted on a billing event tied to prepaid usage / top-up processing.

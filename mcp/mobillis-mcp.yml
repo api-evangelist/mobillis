@@ -1,11 +1,9 @@
 generated: '2026-07-20'
 method: derived
 status: candidate
-source: https://mobillis.com/  # derived from documented API endpoints; no official MCP server published
-note: >-
-  No official hosted/remote MCP server is published by Mobillis. This is a
-  candidate tool list derived from the documented Open API operations, provided
-  as a starting point only.
+source: https://mobillis.com/
+note: No official hosted/remote MCP server is published by Mobillis. This is a candidate tool list derived
+  from the documented Open API operations, provided as a starting point only.
 server:
   name: mobillis
   transport: http
@@ -22,3 +20,9 @@ tools:
 - name: register_webhook
   description: Register a webhook subscription for low-balance and billing events.
   source_operation: POST /v1/webhooks
+deployment:
+  mode: none
+  verified: derived
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census

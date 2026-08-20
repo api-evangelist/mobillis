@@ -46,6 +46,16 @@ tags:
 - Wallets
 - Fleet Management
 - Prepaid
+- Webhook
+- Ledger
+tags_raw:
+- Company
+- Fintech
+- Mobility
+- Payments
+- Wallets
+- Fleet Management
+- Prepaid
 - Webhooks
 - Ledger
 apis:
@@ -58,6 +68,11 @@ apis:
     public OpenAPI or self-serve developer portal is published as of this pass.
   humanURL: https://mobillis.com/#api
   tags:
+  - Wallets
+  - Payments
+  - Ledger
+  - Webhook
+  tags_raw:
   - Wallets
   - Payments
   - Ledger
